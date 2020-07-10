@@ -14,13 +14,14 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // for degug
 //        showStandartTableView(NSButton())
-        showCustomTableView(NSButton())
+//        showCustomTableView(NSButton())
     }
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+
         }
     }
     
@@ -40,7 +41,8 @@ class ViewController: NSViewController {
     // MARK: - Navigation
     override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
         if segue.identifier == Konst.SegueIdentifier.showStandardTableViewController {
-//            self.view.window?.windowController?.close()
+            // Segue時に何か処理があれば
+//            self.view.window?.windowController?.close()  // ウィンドウを完全に遷移する場合
         }
     }
 }

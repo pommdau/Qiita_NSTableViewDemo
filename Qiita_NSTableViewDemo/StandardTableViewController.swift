@@ -10,15 +10,18 @@ import Cocoa
 
 class StandardTableViewController: NSViewController {
 
-    var messages = ["sample message 1",
-                    "sample message 2",
-                    "sample message 3"]
-    
+var messages = ["sample message 1",
+                "sample message 2",
+                "sample message 3"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
 }
+
+
+// MARK:- NSTableViewDelegate, NSTableViewDataSource Methods
 
 extension StandardTableViewController : NSTableViewDelegate, NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
@@ -31,9 +34,7 @@ extension StandardTableViewController : NSTableViewDelegate, NSTableViewDataSour
         }
         
         cellView.textField?.stringValue = messages[row]
-//        cellView.imageView?.image = imageItems[row].image
         
         return cellView
     }
-    
 }

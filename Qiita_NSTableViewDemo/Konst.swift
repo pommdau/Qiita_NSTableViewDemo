@@ -22,5 +22,4 @@ struct Konst {
     struct NibName {
         static let customTableCellView = "CustomTableCellView"
     }
-
 }

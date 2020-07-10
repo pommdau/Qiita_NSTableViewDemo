@@ -22,7 +22,7 @@ class CustomTableViewController: NSViewController {
                                            descriptionText: "number one!"))
         cellDataList.append(CustomCellData(image: NSImage(imageLiteralResourceName: "number_2"),
                                            title: "Title02",
-                                           descriptionText: "number two!\nnumber tow!"))
+                                           descriptionText: "number two!\nnumber two!"))
         cellDataList.append(CustomCellData(image: NSImage(imageLiteralResourceName: "number_3"),
                                            title: "Title03",
                                            descriptionText: "number three!\nnumber three!\nnumber three!"))
@@ -55,9 +55,12 @@ extension CustomTableViewController: NSTableViewDelegate, NSTableViewDataSource 
     }
 }
 
+
+// CustomTableCellViewDelegate Methods
+
 extension CustomTableViewController: CustomTableCellViewDelegate {
     func selectionButtonClicked(for cell: NSTableCellView) {
         let rowIndex = tableView.row(for: cell)  // 選択されたcellViewのIndexを取得できる
-        print("row: [\(rowIndex)]")
+        print("selected row: [\(rowIndex)]")
     }
 }
