@@ -22,10 +22,10 @@ class CustomTableViewController: NSViewController {
                                            descriptionText: "number one!"))
         cellDataList.append(CustomCellData(image: NSImage(imageLiteralResourceName: "number_2"),
                                            title: "Title02",
-                                           descriptionText: "number two!"))
+                                           descriptionText: "number two!\nnumber tow!"))
         cellDataList.append(CustomCellData(image: NSImage(imageLiteralResourceName: "number_3"),
                                            title: "Title03",
-                                           descriptionText: "number three!"))
+                                           descriptionText: "number three!\nnumber three!\nnumber three!"))
         
         // 別のXibファイルから読み込む場合は登録が必要
         tableView.register(NSNib(nibNamed: Konst.NibName.customTableCellView, bundle: nil),
