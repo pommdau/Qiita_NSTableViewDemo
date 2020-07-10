@@ -20,36 +20,49 @@
                     </constraints>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" image="number_1" id="HbU-OS-r1a"/>
                 </imageView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cni-aP-ZMd">
-                    <rect key="frame" x="70" y="41" width="356" height="23"/>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cni-aP-ZMd">
+                    <rect key="frame" x="70" y="41" width="282" height="23"/>
                     <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;Title&gt;" id="qGU-To-4eL">
                         <font key="font" metaFont="systemBold" size="20"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CNd-zX-WiA">
-                    <rect key="frame" x="70" y="17" width="356" height="16"/>
+                <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="CNd-zX-WiA">
+                    <rect key="frame" x="70" y="17" width="282" height="16"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" title="&lt;Description&gt;" id="Cjw-5S-ngc">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ndh-Ii-MO3">
+                    <rect key="frame" x="352" y="17" width="79" height="32"/>
+                    <buttonCell key="cell" type="push" title="Select" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="B0L-Ty-mq2">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="selectionButtonClicked:" target="1AM-dL-Nog" id="O2e-N8-oBZ"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="CNd-zX-WiA" secondAttribute="trailing" constant="4" id="3Rt-D1-vKy"/>
                 <constraint firstItem="cni-aP-ZMd" firstAttribute="top" secondItem="1AM-dL-Nog" secondAttribute="top" constant="4" id="A7w-xs-twF"/>
+                <constraint firstItem="Ndh-Ii-MO3" firstAttribute="leading" secondItem="cni-aP-ZMd" secondAttribute="trailing" constant="8" id="C7C-Rj-LpN"/>
                 <constraint firstItem="cni-aP-ZMd" firstAttribute="leading" secondItem="9E1-3k-qju" secondAttribute="trailing" constant="8" id="FAM-OQ-5Ps"/>
                 <constraint firstItem="CNd-zX-WiA" firstAttribute="top" secondItem="cni-aP-ZMd" secondAttribute="bottom" constant="8" id="JVh-Aw-gcz"/>
+                <constraint firstAttribute="trailing" secondItem="Ndh-Ii-MO3" secondAttribute="trailing" constant="3" id="Uas-BP-peJ"/>
+                <constraint firstItem="Ndh-Ii-MO3" firstAttribute="centerY" secondItem="1AM-dL-Nog" secondAttribute="centerY" id="bQk-S9-S1Y"/>
+                <constraint firstItem="Ndh-Ii-MO3" firstAttribute="leading" secondItem="CNd-zX-WiA" secondAttribute="trailing" constant="8" id="ccI-2o-Ki2"/>
                 <constraint firstItem="9E1-3k-qju" firstAttribute="leading" secondItem="1AM-dL-Nog" secondAttribute="leading" constant="4" id="h1T-UN-ZjD"/>
                 <constraint firstItem="CNd-zX-WiA" firstAttribute="leading" secondItem="9E1-3k-qju" secondAttribute="trailing" constant="8" id="k6L-BE-AKZ"/>
-                <constraint firstAttribute="trailing" secondItem="cni-aP-ZMd" secondAttribute="trailing" constant="4" id="opw-Jz-mnS"/>
                 <constraint firstItem="9E1-3k-qju" firstAttribute="top" secondItem="1AM-dL-Nog" secondAttribute="top" constant="4" id="qZj-DP-lXX"/>
             </constraints>
             <connections>
                 <outlet property="cellImageView" destination="9E1-3k-qju" id="Uxi-Pz-fkX"/>
                 <outlet property="descriptionLabel" destination="CNd-zX-WiA" id="m3a-gs-zIm"/>
+                <outlet property="selectionButton" destination="Ndh-Ii-MO3" id="FxV-8P-bLL"/>
                 <outlet property="titleLabel" destination="cni-aP-ZMd" id="UrQ-NB-T6K"/>
             </connections>
             <point key="canvasLocation" x="4" y="-74"/>

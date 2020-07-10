@@ -8,11 +8,18 @@
 
 import Cocoa
 
+protocol CustomTableCellViewDelegate: class {
+    func selectionButtonClicked(for cell: NSTableCellView)
+}
+
 class CustomTableCellView: NSTableCellView {
 
     @IBOutlet weak var cellImageView: NSImageView!
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var descriptionLabel: NSTextField!
+    @IBOutlet weak var selectionButton: NSButton!
+    
+    var delegate: CustomTableCellViewDelegate?
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -24,4 +31,13 @@ class CustomTableCellView: NSTableCellView {
         self.titleLabel.stringValue       = cellData.title
         self.descriptionLabel.stringValue = cellData.descriptionText
     }
+    
+    
+    // MARK: - Actions
+    
+    @IBAction func selectionButtonClicked(_ sender: NSButton) {
+        // セルのボタンのアクションをコントローラに返すため、delegateを使用する
+        delegate?.selectionButtonClicked(for: self)
+    }
+    
 }

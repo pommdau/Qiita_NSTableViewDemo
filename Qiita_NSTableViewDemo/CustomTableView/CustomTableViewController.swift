@@ -10,7 +10,7 @@ import Cocoa
 
 class CustomTableViewController: NSViewController {
         
-    @IBOutlet weak var tableView: NSTableView!
+    @IBOutlet private weak var tableView: NSTableView!
     
     private var cellDataList = [CustomCellData]()
     
@@ -34,7 +34,9 @@ class CustomTableViewController: NSViewController {
     }
 }
 
+
 // MARK: - NSTableViewDelegate, NSTableViewDataSource Methods
+
 extension CustomTableViewController: NSTableViewDelegate, NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return cellDataList.count
@@ -46,12 +48,16 @@ extension CustomTableViewController: NSTableViewDelegate, NSTableViewDataSource 
             return NSTableCellView()
         }
         
+        cellView.delegate = self
         cellView.configure(for: cellDataList[row])
         
         return cellView
     }
-    
-    
-    
 }
 
+extension CustomTableViewController: CustomTableCellViewDelegate {
+    func selectionButtonClicked(for cell: NSTableCellView) {
+        let rowIndex = tableView.row(for: cell)  // 選択されたcellViewのIndexを取得できる
+        print("row: [\(rowIndex)]")
+    }
+}
